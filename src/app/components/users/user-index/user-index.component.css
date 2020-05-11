@@ -1,0 +1,27 @@
+.container {
+  margin: 0 2rem;
+  margin-top: 2%;
+}
+
+table {
+  width: 100%;
+}
+
+.add {
+  background-color: #2B6CB0;
+  color: white;
+  margin-bottom: 2%;
+}
+
+.activo {
+  background-color: greenyellow;
+}
+
+.inactivo {
+  background-color: red;
+}
+
+.edit {
+  background-color: #2B6CB0;
+  color: white;
+}
