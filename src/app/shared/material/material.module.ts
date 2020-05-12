@@ -11,6 +11,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 const material = [
   MatCardModule,
@@ -23,7 +25,9 @@ const material = [
   MatListModule,
   MatTableModule,
   MatDialogModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDatepickerModule,
+  MatMomentDateModule
 ];
 
 @NgModule({
