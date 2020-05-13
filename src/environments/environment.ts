@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  endPoint: 'http://127.0.0.1:3333' // esta es la url en donde se encuentra la api que hicimos con adonis
+
+  // Con esta url vamos a consumir los servicios
+  // las propiedades que se añadan en el archivo de environment, se pueden mandar llamar en cualquier parte del proyecto
+  // importaremos las variables de entorno en los servicios
 };
 
 /*

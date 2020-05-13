@@ -11,7 +11,9 @@ import { TeacherIndexComponent } from './components/teacher/teacher-index/teache
 import { PanelComponent } from './components/panel/panel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
-
+// importamos estos modulos para poder hacer peticiones http
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptorService } from './services/jwt-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,18 +25,23 @@ import { MaterialModule } from './shared/material/material.module';
     PanelComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   entryComponents: [
     UserFormComponent, // Esto se hace para poder usar los componentes como dialogos
     TeacherFormComponent
   ],
-  providers: [],
+  providers: [
+    // Hay que importar el jwt-interceptor como un provider, normalmente en el arreglo de los providers se registran
+    // los servicios
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
