@@ -1,10 +1,10 @@
 export interface ITeacher {
-  id: number;
+  id?: number;
   name: string;
   paternal: string;
   maternal: string;
   phone: string;
-  user_id: string;
-  birthday: Date;
-  status: boolean;
+  user_id: number;
+  birthdate: string;
+  status?: boolean;
 }

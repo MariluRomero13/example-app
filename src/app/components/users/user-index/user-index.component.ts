@@ -43,4 +43,10 @@ export class UserIndexComponent implements OnInit {
       this.getUsers();
     });
   }
+
+  delete(user) {
+    this.userSvc.delete(user).subscribe(res => {
+      alert('Status cambiado correctamente');
+    });
+  }
 }

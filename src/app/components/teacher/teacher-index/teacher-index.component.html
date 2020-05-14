@@ -31,18 +31,18 @@
        <!-- phone Column -->
        <ng-container matColumnDef="birthday">
         <th mat-header-cell *matHeaderCellDef> Birthday </th>
-        <td mat-cell *matCellDef="let teacher"> {{ teacher.birthday }} </td>
+        <td mat-cell *matCellDef="let teacher"> {{ teacher.birthdate }} </td>
       </ng-container>
 
       <!-- options Column -->
       <ng-container matColumnDef="options">
         <th mat-header-cell *matHeaderCellDef> Options </th>
         <td mat-cell *matCellDef="let teacher">
-          <button mat-button [ngClass]="{'activo': teacher.status, 'inactivo': !teacher.status}"]>
-            <mat-icon>{{ teacher.status? 'check' : 'remove' }}</mat-icon>
+          <button mat-button [ngClass]="{'activo': teacher.status, 'inactivo': !teacher.status}" (click)="delete(teacher)" >
+            <mat-icon>{{ teacher.status? 'check' : 'close' }}</mat-icon>
           </button>
           <button mat-button class="edit" (click)="openTeacherForm(true, teacher)">
-            <mat-icon>pencil</mat-icon>
+            <mat-icon>edit</mat-icon>
           </button>
         </td>
       </ng-container>

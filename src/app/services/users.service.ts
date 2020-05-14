@@ -37,6 +37,6 @@ export class UsersService {
 
   // Este método lo usaremos para cargar los usuarios en un select
   users_unasigneds() {
-    return this.http.get<IUser>(`${this.endPoint}/users_unasigneds`);
+    return this.http.get<IUser[]>(`${this.endPoint}/users_unasigneds`);
   }
 }

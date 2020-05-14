@@ -2,8 +2,9 @@
 <mat-dialog-content>
   <form [formGroup]="teacherForm">
     <mat-form-field class="field">
+      <mat-label>User</mat-label>
       <mat-select formControlName="user_id" placeholcer="Role">
-        <mat-option *ngFor="let user of users"></mat-option>
+        <mat-option *ngFor="let user of users" [value]="user.id"> {{ user.username }} - {{ user.email  }}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field class="field">
@@ -27,6 +28,6 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button [mat-dialog-close]="true">Cerrar</button>
-  <button mat-button [mat-dialog-close]="true" class="save"
+  <button mat-button class="save"
     (click)="data.action? update() : store()">Guardar</button>
 </mat-dialog-actions>
